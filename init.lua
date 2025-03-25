@@ -1,3 +1,6 @@
+-- open config
+vim.cmd('nmap <leader>c :e ~/Appdata/Local/nvim/init.lua<cr>')
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -20,11 +23,3 @@ require('lazy').setup({{
     opts = {}
 }})
 
--- Rebind
-
--- from mi/mI
-vim.keymap.set({'n', 'x'}, 'i', cursors.start_left)
-vim.keymap.set({'n', 'x'}, 'I', cursors.start_left_edge)
--- from ma/mA
-vim.keymap.set({'n', 'x'}, 'a', cursors.start_right)
-vim.keymap.set({'n', 'x'}, 'A', cursors.start_right_edge)
